@@ -1,0 +1,12 @@
+{
+    "name": "devsoutinho-labs",
+    "private": true,
+    "workspaces": [
+        "_servers/*",
+        "_apps/*"
+    ],
+    "scripts": {
+        "setup": "cd _apps/dscli && npm link",
+        "cli": "yarn workspaces @devsoutinho/dscli"
+    }
+}
