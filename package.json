@@ -6,6 +6,7 @@
         "_apps/*"
     ],
     "scripts": {
+        "setup:fix": "cd _apps/dscli && npm unlink && npm link",
         "setup": "cd _apps/dscli && npm link",
         "cli": "yarn workspaces @devsoutinho/dscli"
     }
