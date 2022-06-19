@@ -1,7 +1,7 @@
 (ns dscli.main
   (:require ["./args.js" :refer [args]]
             ["commander" :refer [Command]]
-            [commands.generate-icons.main :as generate-icons]))
+            [commands.app.main :as app]))
 
 (def program (Command.))
 
@@ -10,7 +10,7 @@
     (.description "DevSoutinho's Lab CLI")
     (.version "0.0.1"))
 
-(generate-icons/define program)
+(app/define program)
 
 (-> program
     (.command "hi")
