@@ -4,7 +4,7 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
-	<key>CFBundleDisplayName</key> <!-- Name: -->
+	<key>CFBundleDisplayName</key>
 	<string>Sample App</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
@@ -12,7 +12,7 @@
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
-	<key>CFBundleName</key> <!-- Name Fallback: Max 15 char -->
+	<key>CFBundleName</key>
 	<string>sample_app</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
