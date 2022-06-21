@@ -8,6 +8,7 @@
     "scripts": {
         "setup:fix": "cd _apps/dscli && npm unlink && npm link",
         "setup": "cd _apps/dscli && npm link",
-        "cli": "yarn workspaces @devsoutinho/dscli"
+        "cli": "yarn workspace dscli",
+        "cli:repl": "yarn cli repl"
     }
 }

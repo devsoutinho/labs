@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "nbb ./main.cljs",
-    "dev": "node ./teste.js"
+    "dev": "node ./teste.js",
+    "repl": "lein repl"
   },
   "dependencies": {
     "chalk": "5.0.1",
