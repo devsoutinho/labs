@@ -20,7 +20,7 @@
     (display (str (display-color (str "[" app-platform-name "]") output-color) " Done"))))
 
 
-(def ^:private command "app set-name")
+(def ^:private command "app-set-name")
 
 (defn ^:private action [] 
   (mapv app-platform-rename (get app.config/config :name-paths)))
