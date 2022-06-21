@@ -1,7 +1,11 @@
 (ns dscli.main
   (:require ["./args.js" :refer [args]]
             ["commander" :refer [Command]]
-            [commands.app.main :as app]))
+            [commands.app.main :as app]
+            [utils.display :refer [display]]))
+  
+
+(display "[DsCLI - Start]\n" "bgMagenta")
 
 (def program (Command.))
 
@@ -18,3 +22,5 @@
                (prn "CLI says: Hello!"))))
 
 (program.parse args)
+
+(display "\n[DsCLI - End]\n" "bgMagenta")

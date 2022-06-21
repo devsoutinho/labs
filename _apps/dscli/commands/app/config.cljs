@@ -9,10 +9,12 @@
         js/JSON.parse
         (js->clj :keywordize-keys true))))
 
-(def config {:name-paths {:android {:path "android/app/src/main/AndroidManifest.xml"
+(def config {:name-paths {:android {:output-color "green"
+                                    :path "android/app/src/main/AndroidManifest.xml"
                                     :pattern "android:label=\"(.+?)\""
                                     :result (fn [new-name] (str "android:label=\"" new-name "\""))}
-                          :ios {:path "ios/Runner/Info.plist"
+                          :ios {:output-color "grey"
+                                :path "ios/Runner/Info.plist"
                                 :pattern "<key>CFBundleDisplayName</key>\n\t<string>(.+?)</string>"
                                 :result (fn [new-name] (str "<key>CFBundleDisplayName</key>\n\t<string>" new-name "</string>"))}}
              :app-id-paths {:android {:path "android/app/build.gradle"
