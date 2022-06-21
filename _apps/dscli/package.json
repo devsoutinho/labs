@@ -12,6 +12,7 @@
     "dev": "node ./teste.js"
   },
   "dependencies": {
+    "chalk": "5.0.1",
     "commander": "^9.3.0",
     "ink": "3.2.0",
     "ink-select-input": "4.2.1",
