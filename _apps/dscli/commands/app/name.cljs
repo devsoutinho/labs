@@ -1,43 +1,30 @@
 (ns commands.app.name
   (:require [utils.display :refer [display]] 
             [utils.platform :refer [run-in]] 
+            [commands.app.config :as app.config]
             [clojure.string :as str]
             ["fs" :as fs]))
 
-(def config {:manifest-path "app.manifest.json"
-             :name-paths {#_#_:android {:path "android/app/src/main/AndroidManifest.xml"
-                                    :pattern "android:label=\"(.+?)\""
-                                    :result (fn [new-name] (str "android:label=\"" new-name "\""))}
-                          :ios {:path "ios/Runner/Info.plist" 
-                                :pattern "<key>CFBundleDisplayName</key>\n<string>%%NEW_NAME%%</string>"
-                                :result (fn [new-name] (str "<key>CFBundleDisplayName</key>\n<string>" new-name "</string>"))}}
-             :app-id-paths {:android {:path "android/app/build.gradle"
-                                      :pattern "applicationId \"com.mariosouto.labs\""}}})
-
-; ==================================================
 
 (defn ^:private app-platform-rename [app-platform]
-  (let [new-name "NOVO NOMEEE"
+  (let [new-name (:name (app.config/app-manifest))
         app-platform-name (first app-platform)
-        path (str js/process.env.DSCLI_RUNNING_AT "/" (:path (second app-platform)))
+        path (str app.config/running-at "/" (:path (second app-platform)))
         pattern (:pattern (second app-platform))
         result (:result (second app-platform))
         file-content-start (fs/readFileSync path #js {:encoding "utf-8"})
         file-content-updated (str/replace file-content-start (re-pattern pattern) (result new-name))] 
     (display (str "[" app-platform-name "] Renaming"))
-    (display file-content-updated)
-    #_ (fs/writeFileSync path file-content-updated #js {:encoding "utf-8"})
+    (fs/writeFileSync path file-content-updated #js {:encoding "utf-8"})
     (display (str "[" app-platform-name "] Done!"))))
 
-
-; ==================================================
 
 (def ^:private command "app set-name")
 
 (defn ^:private action []
-  (display "Renaming app ...") 
-  (mapv app-platform-rename (get config :name-paths))
-  (display "Rename done!!!"))
+  (display "[start] app set-name") 
+  (mapv app-platform-rename (get app.config/config :name-paths))
+  (display "[end] app set-name"))
 
 (defn define [program]
   (-> program
