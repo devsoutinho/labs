@@ -1,0 +1,13 @@
+{
+  "name": "@devsoutinho/server_webproxy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nbb ./src/webproxy/main.cljs"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "nbb": "^0.5.118"
+  }
+}
