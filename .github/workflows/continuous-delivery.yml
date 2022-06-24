@@ -31,7 +31,7 @@ jobs:
       run: |
         yarn install
         yarn deploy:app:web
-  build_app_web:
+  build_app_android:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
