@@ -22,4 +22,4 @@ yarn install && yarn setup
 
 | Project Name | Code | Preview |
 | --- | --- | --- |
-| ... | ... | ... |
+| DevSoutinho App | [Code](https://github.com/devsoutinho/labs/tree/main/_apps/app_devsoutinho_labs) | [app.mariosouto.com](https://app.mariosouto.com) |
