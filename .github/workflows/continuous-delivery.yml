@@ -26,7 +26,7 @@ jobs:
         java-version: '11'
     - uses: subosito/flutter-action@v1
       with:
-        flutter-version: '3.0.0'
+        flutter-version: '3.0.3'
     - name: "Start: Deploy Web"
       run: |
         yarn install
@@ -40,3 +40,12 @@ jobs:
     - name: "Start: Deploy Google Play"
       run: |
         echo "TODO: Deploy Google Play"
+  build_app_ios:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - name: "Start: Deploy App Store"
+      run: |
+        echo "TODO: Deploy App Store"
