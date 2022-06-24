@@ -23,6 +23,6 @@ yarn install && yarn setup
 | Project Name | Code | Preview |
 | --- | --- | --- |
 | DevSoutinho App | [Code](https://github.com/devsoutinho/labs/tree/main/_apps/app_devsoutinho_labs) | [app.mariosouto.com](https://app.mariosouto.com) |
-| DevSoutinho WebProxy (API) | [Code](https://github.com/devsoutinho/labs/tree/main/_servers/webproxy) | [devsoutinho-webproxy.herokuapp.com](https://devsoutinho-webproxy.herokuapp.com/) |
+| DevSoutinho WebProxy (API) | [Code](https://github.com/devsoutinho/labs/tree/main/_servers/webproxy) | [https://webproxy.mariosouto.com/graphql](https://webproxy.mariosouto.com/graphql) |
 
 
