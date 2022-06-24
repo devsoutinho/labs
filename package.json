@@ -14,6 +14,7 @@
     "deploy:app:web": "yarn app deploy:web",
     "deploy:app:web:preview": "yarn app deploy:web:preview",
     "server": "yarn workspace @devsoutinho/server_webproxy",
-    "start:server": "yarn server start"
+    "start:server": "yarn server start",
+    "dev:server": "yarn server dev"
   }
 }

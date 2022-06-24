@@ -1,13 +1,23 @@
 {
+  "type": "module",
   "name": "@devsoutinho/server_webproxy",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nbb ./src/webproxy/main.cljs"
+    "start": "nbb ./src/webproxy/main.cljs",
+    "dev": "nodemon --exec npm start -e js,cljs"
   },
   "dependencies": {
+    "apollo-server-core": "^3.9.0",
+    "apollo-server-express": "^3.9.0",
+    "apollo-server-micro": "^3.9.0",
     "express": "^4.18.1",
+    "graphql": "^16.5.0",
+    "micro": "^9.3.4",
     "nbb": "^0.5.118"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
   }
 }

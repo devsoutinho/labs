@@ -1,15 +1,16 @@
 (ns webproxy.main
-  (:require ["express$default" :as express]))
+  {:clj-kondo/config '{:lint-as {promesa.core/let clojure.core/let
+                                 example/defp clojure.core/def}}}
+  (:require ["./js/main.js" :refer [startApolloServer]]))
 
-(def app (express))
-(def port (if js/process.env.PORT
-            js/process.env.PORT
-            3000))
 
-(.get app "/"
-      (fn foo [_req res]
-        (.send res "DevSoutinho: Hello World!")))
+(def defaultTypeDefs "
+type Query {
+   greet: String
+}
+")
+(def typeDefs [defaultTypeDefs])
 
-(.listen app port
-         (fn []
-           (println "Example app listening on port" port)))
+(def resolvers {:Query {:greet (fn [_ _] "DevSoutinho: Hello World!")}})
+
+(startApolloServer (clj->js typeDefs) (clj->js resolvers))
