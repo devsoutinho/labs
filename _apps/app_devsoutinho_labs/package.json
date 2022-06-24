@@ -26,10 +26,9 @@
     "generate:app_name": "flutter pub run flutter_launcher_name:main"
   },
   "devDependencies": {
-    "dotenv": "^16.0.0",
-    "shelljs": "^0.8.5",
-    "vercel": "^24.1.0",
-    "http-server": "^14.1.0"
+    "dotenv": "16.0.1",
+    "vercel": "25.1.0",
+    "http-server": "14.1.1"
   },
   "dependencies": {
     "node-fetch": "^3.2.3"
