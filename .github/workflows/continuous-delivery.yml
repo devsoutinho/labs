@@ -11,7 +11,7 @@ env:
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
 jobs:
-  build:app:
+  build_app_web:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -31,3 +31,12 @@ jobs:
       run: |
         yarn install
         yarn deploy:app:web
+  build_app_web:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - name: "Start: Deploy Google Play"
+      run: |
+        echo "TODO: Deploy Google Play"
