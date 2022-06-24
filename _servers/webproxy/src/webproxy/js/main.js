@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 import { ApolloServer } from 'apollo-server-express';
 import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core';
 import {
@@ -5,6 +6,8 @@ import {
 } from 'apollo-server-core';
 import express from 'express';
 import http from 'http';
+
+dotenv.config();
 
 export async function startApolloServer(typeDefs, resolvers) {
   const port = process.env.PORT || 3000;

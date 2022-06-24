@@ -9,6 +9,8 @@
     "dev": "nodemon --exec npm start -e js,cljs,gql"
   },
   "dependencies": {
+    "dotenv": "16.0.1",
+    "@supabase/supabase-js": "^1.35.3",
     "apollo-server-core": "^3.9.0",
     "apollo-server-express": "^3.9.0",
     "apollo-server-micro": "^3.9.0",

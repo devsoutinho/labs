@@ -1,0 +1,12 @@
+input AuthLoginInput {
+  email: String
+}
+
+type AuthLoginOutput {
+  token: String
+  username: String
+}
+
+extend type Mutation {
+  authLogin(input: AuthLoginInput): AuthLoginOutput!
+}

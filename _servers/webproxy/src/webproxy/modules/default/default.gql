@@ -1,3 +1,10 @@
 type Query {
-   greet: String
+  greet: String
+}
+
+input CreateSampleTextInput {
+  text: String!
+}
+type Mutation {
+  createSampleText(input: CreateSampleTextInput): String
 }
