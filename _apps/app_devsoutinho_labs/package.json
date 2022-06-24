@@ -1,0 +1,37 @@
+{
+  "name": "@devsoutinho/app_devsoutinho_labs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test:unit": "flutter test",
+    "dev:mac": "flutter run -d macos",
+    "dev:win": "flutter run -d windows",
+    "dev:linux": "flutter run -d linux",
+    "dev:web": "flutter run -d chrome --web-renderer html",
+    "dev:web:canvas": "flutter run -d chrome --web-renderer canvaskit",
+    "build:ios": "flutter build ios",
+    "build:mac": "flutter build macos",
+    "build:win": "flutter build windows",
+    "build:linux": "flutter build linux",
+    "build:web": "flutter build web --web-renderer html",
+    "build:web:canvas": "flutter build web --web-renderer canvaskit",
+    "build:web:dev": "yarn build:web && http-server -c-1 -p 8080  ./build/web/",
+    "build:web:dev:canvas": "yarn build:web:canvas && http-server -c-1 -p 8080 ./build/web/",
+    "deploy:web": "yarn deploy:web:base --prod",
+    "deploy:web:preview": "node ./scripts/pullRequestPreview.js",
+    "deploy:web:base": "yarn build:web && npx vercel ./build/web --confirm --no-clipboard --token=$VERCEL_TOKEN",
+    "generate:icons": "flutter pub run flutter_launcher_icons:main",
+    "generate:app_name": "flutter pub run flutter_launcher_name:main"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "shelljs": "^0.8.5",
+    "vercel": "^24.1.0",
+    "http-server": "^14.1.0"
+  },
+  "dependencies": {
+    "node-fetch": "^3.2.3"
+  }
+}
