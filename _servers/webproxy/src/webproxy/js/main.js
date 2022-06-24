@@ -9,6 +9,9 @@ import http from 'http';
 export async function startApolloServer(typeDefs, resolvers) {
   const port = process.env.PORT || 3000;
   const app = express();
+
+  app.get('/', (req, res) => res.redirect('/graphql'));
+
   const httpServer = http.createServer(app);
   const server = new ApolloServer({
     typeDefs,

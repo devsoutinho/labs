@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nbb ./src/webproxy/main.cljs",
-    "dev": "nodemon --exec npm start -e js,cljs"
+    "dev": "nodemon --exec npm start -e js,cljs,gql"
   },
   "dependencies": {
     "apollo-server-core": "^3.9.0",

@@ -1,0 +1,20 @@
+enum PostType {
+  YOUTUBE_VIDEO
+  PRODUCT_LINK
+}
+
+input PostsInput {
+  limit: Int
+  offset: Int
+}
+type Post {
+  title: String
+  url: String
+  date: String
+  excerpt: String
+  postType: PostType
+}
+
+extend type Query {
+  posts(input: PostsInput): [Post]!
+}
