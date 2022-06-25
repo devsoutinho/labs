@@ -18,3 +18,8 @@
          (-> (p/let [x (p/delay 1000 :done)]
                (is (= :done x)))
              (p/finally done))))
+
+
+(comment
+  ; Select t/run-tests and press "Control + Enter"
+  (t/run-tests 'src.webproxy.modules.auth.auth-test))
