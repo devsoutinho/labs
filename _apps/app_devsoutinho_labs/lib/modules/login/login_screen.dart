@@ -1,5 +1,5 @@
-import 'package:app_devsoutinho_labs/infra/responsivity/GridItem.dart';
-import 'package:app_devsoutinho_labs/infra/responsivity/valueForBreakpoint.dart';
+import 'package:app_devsoutinho_labs/infra/responsivity/grid_item.dart';
+import 'package:app_devsoutinho_labs/infra/responsivity/value_for_breakpoint.dart';
 import 'package:app_devsoutinho_labs/modules/home_shell/home_shell_screen.dart';
 import 'package:flutter/material.dart';
 
