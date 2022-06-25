@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "nbb ./src/webproxy/main.cljs",
-    "test": "node ./scripts/load-test-ns.js && nbb -m test/run-tests",
+    "test": "node ./scripts/load-test-ns.js",
+    "posttest": "nbb -m test/run-tests",
     "dev": "nodemon --exec npm start -e js,cljs,gql"
   },
   "dependencies": {
