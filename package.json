@@ -11,6 +11,7 @@
     "cli": "yarn workspace dscli",
     "cli:repl": "yarn cli repl",
     "app": "yarn workspace @devsoutinho/app_devsoutinho_labs",
+    "test:unit:app": "yarn app test:unit",
     "deploy:app:web": "yarn app deploy:web",
     "deploy:app:web:preview": "yarn app deploy:web:preview",
     "server": "yarn workspace @devsoutinho/server_webproxy",

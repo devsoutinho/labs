@@ -1,17 +1,20 @@
-name: CD - Flutter Web
+
+
+name: CI - Web
 
 on:
-  push:
-    branches: [ main ]
+  pull_request:
+    types: [opened, synchronize]
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  GITHUB_PR_NUMBER: ${{ github.event.pull_request.number }}
 
 jobs:
-  release_app_web:
+  test_unit_app:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -26,26 +29,28 @@ jobs:
         java-version: '11'
     - uses: subosito/flutter-action@v1
       with:
-        flutter-version: '3.0.3'
-    - name: "Start: Deploy Web"
+        flutter-version: '2.10.4'
+    - name: "Start: Unit Testing"
       run: |
         yarn install
-        yarn deploy:app:web
-  release_app_android:
+        yarn test:unit:app
+  release_app_preview:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
       with:
         submodules: recursive
-    - name: "Start: Deploy Google Play"
-      run: |
-        echo "TODO: Deploy Google Play"
-  release_app_ios:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
       with:
-        submodules: recursive
-    - name: "Start: Deploy App Store"
+        node-version: '14'
+    - uses: actions/setup-java@v2
+      with:
+        distribution: 'zulu'
+        java-version: '11'
+    - uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.0.0'
+    - name: "Start: Deploy Web Preview"
       run: |
-        echo "TODO: Deploy App Store"
+        yarn install
+        yarn deploy:app:web:preview
