@@ -94,6 +94,11 @@ class Responsive {
 
   Responsive(this.context);
 
+  getScreenWidth() {
+    double screenWidth = MediaQuery.of(context).size.width;
+    return screenWidth;
+  }
+
   ValueType value<ValueType>(
     Map<Breakpoints, ValueType> value,
   ) {
