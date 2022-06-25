@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'DevSoutinho Labs',
       theme: ThemeData(
         fontFamily: '--apple-system',
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.orange,
       ),
       routes: {
         LoginScreen.routeName: (context) => const LoginScreen(),

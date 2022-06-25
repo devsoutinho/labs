@@ -90,16 +90,30 @@ class LoginFormPattern extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                "Sign in to your account",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+              Container(
+                margin: const EdgeInsets.only(bottom: 40),
+                child: Image.network(
+                  "https://github.com/devsoutinho.png",
+                  width: 60,
+                  height: 60,
+                ),
               ),
-              const Text(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                style: TextStyle(fontSize: 16),
+              Container(
+                margin: const EdgeInsets.only(bottom: 8),
+                child: const SelectableText(
+                  "Sign in to your account",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.only(bottom: 40),
+                child: const SelectableText(
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                  style: TextStyle(fontSize: 16, color: Colors.grey),
+                ),
               ),
               const Padding(
-                padding: EdgeInsets.symmetric(vertical: 8.0),
+                padding: EdgeInsets.only(bottom: 16),
                 child: TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -108,7 +122,7 @@ class LoginFormPattern extends StatelessWidget {
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.symmetric(vertical: 8.0),
+                padding: EdgeInsets.only(bottom: 16),
                 child: TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -117,23 +131,26 @@ class LoginFormPattern extends StatelessWidget {
                 ),
               ),
               ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size.fromHeight(42),
-                ),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                  child: GridItem(
-                    as: Row,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text('Login'),
-                      Icon(
-                        Icons.arrow_forward,
-                        size: 14,
-                      )
-                    ],
+                style: ButtonStyle(
+                  minimumSize: MaterialStateProperty.all(
+                    const Size(double.infinity, 42),
                   ),
+                ),
+                child: const GridItem(
+                  as: Row,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Login ',
+                      style: TextStyle(color: Colors.white, fontSize: 14),
+                    ),
+                    Icon(
+                      Icons.arrow_forward,
+                      size: 14,
+                      color: Colors.white,
+                    )
+                  ],
                 ),
                 onPressed: () {
                   Navigator.pushNamed(context, HomeShellScreen.routeName);
