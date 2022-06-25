@@ -1,4 +1,4 @@
-(ns src.webproxy.main 
+(ns src.webproxy.main
   (:require ["./js/main.js" :refer [startApolloServer]]
             ["fs" :as fs]
             [src.webproxy.modules.default.default :as module.default]

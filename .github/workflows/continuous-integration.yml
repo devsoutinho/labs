@@ -26,6 +26,19 @@ jobs:
       run: |
         yarn install
         yarn test:server
+  lint_server:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+    - name: "Start: Linter"
+      run: |
+        yarn install
+        yarn lint:server
   test_unit_app:
     runs-on: ubuntu-latest
     steps:
