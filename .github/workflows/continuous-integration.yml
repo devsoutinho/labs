@@ -1,6 +1,5 @@
 
-
-name: CI - Web
+name: CI - App (Flutter)
 
 on:
   pull_request:
