@@ -5,7 +5,7 @@
 
 (deftest auth-awesome-test
   (testing "[AUTH] one equals one"
-    (is (= 1 2)))
+    (is (= 1 1)))
   (testing "[AUTH] this test will fail"
     (is (= 1 1))))
 
