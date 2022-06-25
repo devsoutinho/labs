@@ -39,6 +39,24 @@ class LoginScreen extends StatelessWidget {
   }
 }
 
+class LoginScreenBackground extends StatelessWidget {
+  const LoginScreenBackground({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("assets/background-login.jpg"),
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+}
+
 class LoginFormPattern extends StatelessWidget {
   const LoginFormPattern({
     Key? key,
@@ -54,24 +72,50 @@ class LoginFormPattern extends StatelessWidget {
         Breakpoints.md: 608,
       }),
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 48, horizontal: 16),
+        decoration: const BoxDecoration(
+            color: Colors.white,
+            border: Border(top: BorderSide(width: 5, color: Colors.orange))),
+        padding: EdgeInsets.symmetric(
+          vertical: responsive.value({
+            Breakpoints.xs: 24,
+            Breakpoints.sm: 48,
+          }),
+          horizontal: responsive.value({
+            Breakpoints.xs: 16,
+            Breakpoints.sm: 56,
+            Breakpoints.md: 112,
+          }),
+        ),
         constraints: BoxConstraints(minWidth: responsive.getScreenWidth()),
-        color: Colors.white,
         child: Center(
           child: GridItem(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                "Sign in to your account",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+              Container(
+                margin: const EdgeInsets.only(bottom: 40),
+                child: Image.network(
+                  "https://github.com/devsoutinho.png",
+                  width: 60,
+                  height: 60,
+                ),
               ),
-              const Text(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                style: TextStyle(fontSize: 16),
+              Container(
+                margin: const EdgeInsets.only(bottom: 8),
+                child: const SelectableText(
+                  "Sign in to your account",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.only(bottom: 40),
+                child: const SelectableText(
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                  style: TextStyle(fontSize: 16, color: Colors.grey),
+                ),
               ),
               const Padding(
-                padding: EdgeInsets.symmetric(vertical: 8.0),
+                padding: EdgeInsets.only(bottom: 16),
                 child: TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -80,7 +124,7 @@ class LoginFormPattern extends StatelessWidget {
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.symmetric(vertical: 8.0),
+                padding: EdgeInsets.only(bottom: 16),
                 child: TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -89,31 +133,33 @@ class LoginFormPattern extends StatelessWidget {
                 ),
               ),
               ElevatedButton(
-                child: const Text('Login'),
+                style: ButtonStyle(
+                  minimumSize: MaterialStateProperty.all(
+                    const Size(double.infinity, 42),
+                  ),
+                ),
+                child: const GridItem(
+                  as: Row,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Login ',
+                      style: TextStyle(color: Colors.white, fontSize: 14),
+                    ),
+                    Icon(
+                      Icons.arrow_forward,
+                      size: 14,
+                      color: Colors.white,
+                    )
+                  ],
+                ),
                 onPressed: () {
                   Navigator.pushNamed(context, HomeShellScreen.routeName);
                 },
               ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class LoginScreenBackground extends StatelessWidget {
-  const LoginScreenBackground({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("assets/background-login.jpg"),
-          fit: BoxFit.cover,
         ),
       ),
     );

@@ -8,7 +8,8 @@ class AppsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Apps Screen'),
+        iconTheme: const IconThemeData(color: Colors.white),
+        title: const Text('Apps Screen', style: TextStyle(color: Colors.white)),
       ),
     );
   }

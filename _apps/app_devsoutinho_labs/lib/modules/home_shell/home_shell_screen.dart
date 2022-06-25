@@ -10,18 +10,20 @@ class HomeShellScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home Shell'),
+        iconTheme: const IconThemeData(color: Colors.white),
+        title: const Text('Home Shell', style: TextStyle(color: Colors.white)),
       ),
       body: Center(
         child: Column(children: [
           ElevatedButton(
-            child: const Text('Apps'),
+            child: const Text('Apps', style: TextStyle(color: Colors.white)),
             onPressed: () {
               Navigator.pushNamed(context, AppsScreen.routeName);
             },
           ),
           ElevatedButton(
-            child: const Text('Feed DevSoutinho'),
+            child: const Text('Feed DevSoutinho',
+                style: TextStyle(color: Colors.white)),
             onPressed: () {
               Navigator.pushNamed(context, FeedChannelScreen.routeName);
             },
