@@ -1,5 +1,4 @@
 (ns src.webproxy.modules.auth.auth
-  {:clj-kondo/config '{:lint-as {promesa.core/let clojure.core/let}}}
   (:require ["@supabase/supabase-js" :refer [createClient]]
             [src.webproxy.infra.graphql.main :as gql]
             [promesa.core :as p]))

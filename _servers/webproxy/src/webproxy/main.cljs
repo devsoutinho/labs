@@ -1,6 +1,4 @@
-(ns src.webproxy.main
-  {:clj-kondo/config '{:lint-as {promesa.core/let clojure.core/let
-                                 example/defp clojure.core/def}}}
+(ns src.webproxy.main 
   (:require ["./js/main.js" :refer [startApolloServer]]
             ["fs" :as fs]
             [src.webproxy.modules.default.default :as module.default]
