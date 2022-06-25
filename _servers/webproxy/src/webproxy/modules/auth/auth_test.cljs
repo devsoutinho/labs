@@ -1,7 +1,11 @@
 (ns src.webproxy.modules.auth.auth-test
   (:require
    [cljs.test :as t :refer [async deftest is testing]]
-   [promesa.core :as p]))
+   [promesa.core :as p]
+   [src.webproxy.modules.auth.external-file :as external-file]))
+
+(prn "Ta rodando mesmo?")
+(prn (external-file/sum))
 
 (deftest auth-awesome-test
   (testing "[AUTH] one equals one"
