@@ -1,4 +1,4 @@
-name: CD - App (Flutter)
+name: CD - Continuous Delivery
 
 on:
   push:

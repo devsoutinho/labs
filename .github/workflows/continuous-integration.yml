@@ -1,5 +1,5 @@
 
-name: CI - App (Flutter)
+name: CI - Continuous Integration
 
 on:
   pull_request:
