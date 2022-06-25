@@ -54,7 +54,17 @@ class LoginFormPattern extends StatelessWidget {
         Breakpoints.md: 608,
       }),
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 48, horizontal: 16),
+        padding: EdgeInsets.symmetric(
+          vertical: responsive.value({
+            Breakpoints.xs: 24,
+            Breakpoints.sm: 48,
+          }),
+          horizontal: responsive.value({
+            Breakpoints.xs: 16,
+            Breakpoints.sm: 56,
+            Breakpoints.md: 112,
+          }),
+        ),
         constraints: BoxConstraints(minWidth: responsive.getScreenWidth()),
         color: Colors.white,
         child: Center(
