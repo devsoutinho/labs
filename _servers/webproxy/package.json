@@ -8,7 +8,9 @@
     "start": "nbb ./src/webproxy/main.cljs",
     "test": "node ./scripts/load-test-ns.js",
     "posttest": "nbb -m test/run-tests",
-    "dev": "nodemon --exec npm start -e js,cljs,gql"
+    "dev": "nodemon --exec npm start -e js,cljs,gql",
+    "lint": "clj-kondo --lint src/",
+    "lint:fix": "yarn lint --fix"
   },
   "dependencies": {
     "dotenv": "16.0.1",
@@ -22,6 +24,7 @@
     "nbb": "^0.5.118"
   },
   "devDependencies": {
-    "nodemon": "^2.0.18"
+    "nodemon": "^2.0.18",
+    "clj-kondo": "2022.5.31"
   }
 }

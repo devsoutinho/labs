@@ -21,6 +21,7 @@
     "server": "yarn workspace @devsoutinho/server_webproxy",
     "start:server": "yarn server start",
     "test:server": "yarn server test",
+    "lint:server": "yarn server lint",
     "dev:server": "yarn server dev"
   }
 }
