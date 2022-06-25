@@ -27,7 +27,7 @@ jobs:
     - uses: subosito/flutter-action@v1
       with:
         flutter-version: '3.0.3'
-    - name: "Start: Deploy Web"
+    - name: "Start: Release Web"
       run: |
         yarn install
         yarn deploy:web:app
@@ -37,7 +37,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: recursive
-    - name: "Start: Deploy Google Play"
+    - name: "Start: Release Google Play"
       run: |
         echo "TODO: Deploy Google Play"
   release_app_ios:
@@ -46,6 +46,6 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: recursive
-    - name: "Start: Deploy App Store"
+    - name: "Start: Release App Store"
       run: |
         echo "TODO: Deploy App Store"

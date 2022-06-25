@@ -70,7 +70,7 @@ jobs:
     - uses: subosito/flutter-action@v2
       with:
         flutter-version: '3.0.3'
-    - name: "Start: Deploy Web Preview"
+    - name: "Start: Linter"
       run: |
         yarn install
         yarn lint:app
