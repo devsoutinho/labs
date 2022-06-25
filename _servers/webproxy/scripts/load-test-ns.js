@@ -14,7 +14,7 @@ const output = testFile
   )
   .replace(
     /(;%LOAD_TEST_NS_LIST_START%)([\S\s]*?)(;%LOAD_TEST_NS_LIST_END%)/gmi,
-    `$1\n${allFilesTestFiles.map(f => `'${f}`).join('\n')}\n$3`
+    `$1\n${allFilesTestFiles.map(f => `_ (t/run-tests '${f})`).join('\n')}\n$3`
   );
 
 
