@@ -1,5 +1,4 @@
 (ns src.webproxy.infra.graphql.main
-  {:clj-kondo/config '{:lint-as {promesa.core/let clojure.core/let}}}
   (:require [promesa.core :as p]))
 
 

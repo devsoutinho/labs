@@ -1,5 +1,6 @@
 input AuthLoginInput {
   email: String
+  password: String
 }
 
 type AuthLoginOutput {
