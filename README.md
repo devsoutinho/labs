@@ -7,8 +7,9 @@
 
 ## Installation guide
 
-- NodeJS LTS
-- Yarn 
+- [NodeJS LTS](https://nodejs.org/)
+- [Flutter](https://docs.flutter.dev/get-started/install)
+- [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/) 
 
 ```sh
 yarn install && yarn setup
