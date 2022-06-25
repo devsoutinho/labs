@@ -72,6 +72,9 @@ class LoginFormPattern extends StatelessWidget {
         Breakpoints.md: 608,
       }),
       child: Container(
+        decoration: const BoxDecoration(
+            color: Colors.white,
+            border: Border(top: BorderSide(width: 5, color: Colors.orange))),
         padding: EdgeInsets.symmetric(
           vertical: responsive.value({
             Breakpoints.xs: 24,
@@ -84,7 +87,6 @@ class LoginFormPattern extends StatelessWidget {
           }),
         ),
         constraints: BoxConstraints(minWidth: responsive.getScreenWidth()),
-        color: Colors.white,
         child: Center(
           child: GridItem(
             crossAxisAlignment: CrossAxisAlignment.start,
