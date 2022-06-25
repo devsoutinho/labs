@@ -8,7 +8,9 @@ class FeedChannelScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Feed Channel'),
+        iconTheme: const IconThemeData(color: Colors.white),
+        title:
+            const Text('Feed Channel', style: TextStyle(color: Colors.white)),
       ),
     );
   }
