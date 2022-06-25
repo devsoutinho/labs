@@ -1,4 +1,4 @@
-name: CD - Flutter Web
+name: CD - App (Flutter)
 
 on:
   push:
@@ -11,7 +11,7 @@ env:
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
 jobs:
-  build_app_web:
+  release_app_web:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -27,25 +27,25 @@ jobs:
     - uses: subosito/flutter-action@v1
       with:
         flutter-version: '3.0.3'
-    - name: "Start: Deploy Web"
+    - name: "Start: Release Web"
       run: |
         yarn install
-        yarn deploy:app:web
-  build_app_android:
+        yarn deploy:web:app
+  release_app_android:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
       with:
         submodules: recursive
-    - name: "Start: Deploy Google Play"
+    - name: "Start: Release Google Play"
       run: |
         echo "TODO: Deploy Google Play"
-  build_app_ios:
+  release_app_ios:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
       with:
         submodules: recursive
-    - name: "Start: Deploy App Store"
+    - name: "Start: Release App Store"
       run: |
         echo "TODO: Deploy App Store"

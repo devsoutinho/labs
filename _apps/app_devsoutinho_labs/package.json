@@ -5,6 +5,8 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
+    "install:deps": "flutter pub get",
+    "lint": "dart analyze .",
     "test:unit": "flutter test",
     "dev:mac": "flutter run -d macos",
     "dev:win": "flutter run -d windows",
@@ -26,6 +28,7 @@
     "generate:app_name": "flutter pub run flutter_launcher_name:main"
   },
   "devDependencies": {
+    "shelljs": "0.8.5",
     "dotenv": "16.0.1",
     "http-server": "14.1.1"
   },
