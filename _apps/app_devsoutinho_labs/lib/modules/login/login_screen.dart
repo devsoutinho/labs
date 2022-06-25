@@ -39,6 +39,24 @@ class LoginScreen extends StatelessWidget {
   }
 }
 
+class LoginScreenBackground extends StatelessWidget {
+  const LoginScreenBackground({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("assets/background-login.jpg"),
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+}
+
 class LoginFormPattern extends StatelessWidget {
   const LoginFormPattern({
     Key? key,
@@ -99,31 +117,30 @@ class LoginFormPattern extends StatelessWidget {
                 ),
               ),
               ElevatedButton(
-                child: const Text('Login'),
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size.fromHeight(42),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                  child: GridItem(
+                    as: Row,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text('Login'),
+                      Icon(
+                        Icons.arrow_forward,
+                        size: 14,
+                      )
+                    ],
+                  ),
+                ),
                 onPressed: () {
                   Navigator.pushNamed(context, HomeShellScreen.routeName);
                 },
               ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class LoginScreenBackground extends StatelessWidget {
-  const LoginScreenBackground({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("assets/background-login.jpg"),
-          fit: BoxFit.cover,
         ),
       ),
     );
