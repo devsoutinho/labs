@@ -27,7 +27,7 @@ GitHubService(GITHUB_TOKEN)
         GITHUB_REPOSITORY,
         commentBody: (
 `
-- Deploy URL: [${vercelUrl}](${vercelUrl})
+- Deploy URL (WebApp): [${vercelUrl}](${vercelUrl})
 `
         )
     })
