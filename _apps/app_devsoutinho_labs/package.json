@@ -5,6 +5,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
+    "lint": "dart analyze .",
     "test:unit": "flutter test",
     "dev:mac": "flutter run -d macos",
     "dev:win": "flutter run -d windows",

@@ -53,4 +53,4 @@ jobs:
     - name: "Start: Deploy Web Preview"
       run: |
         yarn install
-        yarn deploy:app:web:preview
+        yarn deploy:web:preview:app

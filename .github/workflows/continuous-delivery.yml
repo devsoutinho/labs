@@ -30,7 +30,7 @@ jobs:
     - name: "Start: Deploy Web"
       run: |
         yarn install
-        yarn deploy:app:web
+        yarn deploy:web:app
   release_app_android:
     runs-on: ubuntu-latest
     steps:
