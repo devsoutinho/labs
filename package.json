@@ -5,6 +5,9 @@
     "_servers/*",
     "_apps/*"
   ],
+  "resolutions": {
+    "got": "11.8.5"
+  },
   "scripts": {
     "setup:fix": "cd _apps/dscli && npm unlink && npm link",
     "setup": "cd _apps/dscli && npm link",
