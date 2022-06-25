@@ -72,5 +72,6 @@ jobs:
     - name: "Start: Linter"
       run: |
         yarn install
+        yarn app install:deps
         yarn lint:app
 
