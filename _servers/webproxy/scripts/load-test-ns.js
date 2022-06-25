@@ -4,7 +4,7 @@ const TEST_MAIN_FILE = './test.cljs';
 
 const allFilesTestFiles = walk()
   .filter(file => file.endsWith('_test.cljs'))
-  .map(file => file.replace('./', '').split('/').join('.').replace('.cljs', '').replaceAll('_', '-'));
+  .map(file => file?.replace('./', '')?.split('/')?.join('.')?.replace('.cljs', '')?.replaceAll('_', '-'));
 
 const testFile = fs.readFileSync(TEST_MAIN_FILE, { encoding: 'utf-8' });
 const output = testFile
