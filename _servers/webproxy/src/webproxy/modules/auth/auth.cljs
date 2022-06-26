@@ -1,26 +1,25 @@
 (ns src.webproxy.modules.auth.auth
-  (:require ["@supabase/supabase-js" :refer [createClient]]
-            [src.webproxy.infra.graphql.main :as gql]
-            [promesa.core :as p]))
+  (:require [src.webproxy.infra.graphql.main :as gql]
+            [promesa.core :as p]
+            [src.webproxy.infra.jwt.main :as jwt]
+            [src.webproxy.repositories.user :as user.repository]))
 
-(defn get-all-users []
-  (p/let [supabase-api-key js/globalThis.process.env.SUPABASE_API_KEY
-          supabase-url js/globalThis.process.env.SUPABASE_URL
-          supabase (createClient supabase-url supabase-api-key)
-          response (-> (.from supabase "user")
-                       (.select))
-          response-parsed (js->clj response {:keywordize-keys true})
-          users (:data response-parsed)]
-    users))
-
-; ========================================================================================================================
-; ========================================================================================================================
-
+(def auth-secret-base js/globalThis.process.env.AUTH_SECRET_BASE)
 ; [Resolvers]
-(defn auth-login []
-  (p/let [users (get-all-users)
-          user (first users)
-          output {:token (:id user)
+(defn get-user [users input]
+  (p/let [user (first (filter (fn [user] (= (:email user) (:email input))) users))]
+    (if user
+      user
+      ; TODO: Better error handling https://www.apollographql.com/docs/apollo-server/data/errors/#custom-errors
+      (throw (js/Error. "Email or password is wrong. Can't find user")))))
+
+; TODO: How to use better GraphQL Context to provide access to external data
+; TODO: How to test GraphQL Resolvers
+; TODO: How to make integration tests on GraphQL
+(defn auth-login [_ {:keys [input]}]
+  (p/let [users (user.repository/get-all-users)
+          user (get-user users input)
+          output {:token (jwt/sign user auth-secret-base {:expiresIn "1h"})
                   :username (:username user)}]
     output))
 
