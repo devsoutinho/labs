@@ -17,6 +17,8 @@ yarn install && yarn setup
 
 ## How to run locally?
 
+- First of all, run `yarn install` them:
+
 ### Server
 ```sh
 yarn dev:server
@@ -31,6 +33,9 @@ yarn dev:web:app
 ## How to use `dscli`?
 > `dscli` is a command line tool that help you to work with automations inside the monorepo
 
+```sh
+yarn setup && dscli 
+```
 
 ## Projects
 
