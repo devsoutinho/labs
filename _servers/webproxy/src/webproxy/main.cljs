@@ -5,9 +5,6 @@
             [src.webproxy.modules.posts.posts :as module.posts]
             [src.webproxy.modules.auth.auth :as module.auth]))
 
-
-
-
 (def videoTypeDefs {:type/Query {:greet :String}})
 
 (def typeDefs [(fs/readFileSync (:typeDefs module.default/defaultModule) #js {:encoding "utf8"})

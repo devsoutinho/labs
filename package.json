@@ -22,6 +22,7 @@
     "start:server": "yarn server start",
     "test:server": "yarn server test",
     "lint:server": "yarn server lint",
+    "lint:fix:server": "yarn server lint:fix",
     "dev:server": "yarn server dev"
   }
 }
