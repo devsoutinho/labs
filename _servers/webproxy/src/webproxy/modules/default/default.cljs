@@ -1,7 +1,6 @@
 (ns src.webproxy.modules.default.default
   (:require [src.webproxy.infra.graphql.main :as gql]))
 
-
 (defn greet [] "DevSoutinho: Hello World!")
 (defn create-text-sample [_ args]
   (get-in args [:input :text]))

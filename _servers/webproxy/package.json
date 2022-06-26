@@ -9,8 +9,9 @@
     "test": "node ./scripts/load-test-ns.js",
     "posttest": "nbb -m test/run-tests",
     "dev": "nodemon --exec npm start -e js,cljs,gql",
-    "lint": "clj-kondo --lint src/",
-    "lint:fix": "yarn lint --fix"
+    "lint": "clj-kondo --lint src/ && yarn fmt check",
+    "fmt": "clojure -Sdeps '{:deps {cljfmt/cljfmt {:mvn/version \"0.8.0\"}}}' -m cljfmt.main",
+    "lint:fix": "yarn fmt fix"
   },
   "dependencies": {
     "dotenv": "16.0.1",
