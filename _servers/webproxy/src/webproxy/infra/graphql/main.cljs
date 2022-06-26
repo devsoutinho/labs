@@ -1,10 +1,8 @@
 (ns src.webproxy.infra.graphql.main
   (:require [promesa.core :as p]))
 
-
 (defn type-defs [gql-file-path]
   (str (js/process.cwd) gql-file-path))
-
 
 (defn handle-resolver [callback]
   (fn [& args]
