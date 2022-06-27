@@ -14,19 +14,20 @@
     "lint:fix": "yarn fmt fix"
   },
   "dependencies": {
-    "dotenv": "16.0.1",
     "@supabase/supabase-js": "^1.35.3",
     "apollo-server-core": "^3.9.0",
+    "apollo-server-errors": "^3.3.1",
     "apollo-server-express": "^3.9.0",
     "apollo-server-micro": "^3.9.0",
+    "dotenv": "16.0.1",
     "express": "^4.18.1",
     "graphql": "^16.5.0",
-    "micro": "^9.3.4",
     "jsonwebtoken": "8.5.1",
+    "micro": "^9.3.4",
     "nbb": "^0.5.118"
   },
   "devDependencies": {
-    "nodemon": "^2.0.18",
-    "clj-kondo": "2022.5.31"
+    "clj-kondo": "2022.5.31",
+    "nodemon": "^2.0.18"
   }
 }
