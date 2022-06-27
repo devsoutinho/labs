@@ -21,10 +21,11 @@
 ; TODO: How to use better GraphQL Context to provide access to external data
 ; TODO: How to test GraphQL Resolvers
 ; TODO: How to make integration tests on GraphQL
-(defn auth-login [_ {:keys [input]} context]
-  (js/console.log context)
+(defn auth-login [_ args context]
+  (js/console.log "args" args)
+  (js/console.log "context" context)
   (p/let [users (user.repository/get-all-users)
-          user (get-user users input)
+          user (get-user users (:input args))
           output {:token (jwt/sign user auth-secret-base {:expiresIn "1h"})
                   :username (:username user)}] 
     output))
