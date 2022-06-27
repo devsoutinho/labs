@@ -9,7 +9,9 @@
 ; [Resolvers]
 (defn get-user [users input]
   (p/let [user (first (filter (fn [user] (= (:email user) (:email input))) users))]
-         (prn (:email input))
+    (prn input)
+    (js/console.log input)
+    (prn (:email input))
     (prn user)
     (if user
       user
