@@ -9,7 +9,8 @@
 ; [Resolvers]
 (defn get-user [users input]
   (p/let [user (first (filter (fn [user] (= (:email user) (:email input))) users))]
-    (js/console.log (clj->js user))
+         (prn (:email input))
+    (prn user)
     (if user
       user
       ; TODO: Better error handling https://www.apollographql.com/docs/apollo-server/data/errors/#custom-errors
