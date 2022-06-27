@@ -20,6 +20,9 @@ export async function startApolloServer(typeDefs, resolvers) {
     typeDefs,
     resolvers,
     csrfPrevention: true,
+    context: () => ({
+      authScope: false,
+    }),
     cache: 'bounded',
     plugins: [
       ApolloServerPluginDrainHttpServer({ httpServer }),
