@@ -1,6 +1,6 @@
 input AuthLoginInput {
-  email: String
-  password: String
+  email: String!
+  password: String!
 }
 
 type AuthLoginOutput {
@@ -9,5 +9,5 @@ type AuthLoginOutput {
 }
 
 extend type Mutation {
-  authLogin(input: AuthLoginInput): AuthLoginOutput!
+  authLogin(input: AuthLoginInput!): AuthLoginOutput!
 }

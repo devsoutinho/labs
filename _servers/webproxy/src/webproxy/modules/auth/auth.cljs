@@ -9,21 +9,14 @@
 ; [Resolvers]
 (defn get-user [users input]
   (p/let [user (first (filter (fn [user] (= (:email user) (:email input))) users))]
-    (prn input)
-    (js/console.log input)
-    (prn (:email input))
-    (prn user)
     (if user
       user
-      ; TODO: Better error handling https://www.apollographql.com/docs/apollo-server/data/errors/#custom-errors
-      (throw (gql-errors/Error)))))
+      (throw (gql-errors/Error "Please check your info, your email or password are wrong")))))
 
 ; TODO: How to use better GraphQL Context to provide access to external data
 ; TODO: How to test GraphQL Resolvers
 ; TODO: How to make integration tests on GraphQL
-(defn auth-login [_ args context]
-  (js/console.log "args" args)
-  (js/console.log "context" context)
+(defn auth-login [_ args]
   (p/let [users (user.repository/get-all-users)
           user (get-user users (:input args))
           output {:token (jwt/sign user auth-secret-base {:expiresIn "1h"})
