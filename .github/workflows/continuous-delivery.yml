@@ -9,6 +9,7 @@ env:
   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  VERCEL_PROJECT_ID_CANVAS: ${{ secrets.VERCEL_PROJECT_ID_CANVAS }}
 
 jobs:
   release_app_web:
@@ -31,6 +32,7 @@ jobs:
       run: |
         yarn install
         yarn deploy:web:app
+        yarn deploy:web:app:canvas
   release_app_android:
     runs-on: ubuntu-latest
     steps:

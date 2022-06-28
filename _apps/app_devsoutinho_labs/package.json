@@ -22,6 +22,7 @@
     "build:web:dev": "yarn build:web && http-server -c-1 -p 8080  ./build/web/",
     "build:web:dev:canvas": "yarn build:web:canvas && http-server -c-1 -p 8080 ./build/web/",
     "deploy:web": "yarn deploy:web:base --prod",
+    "deploy:web:canvas": "yarn build:web:canvas && VERCEL_PROJECT_ID=$VERCEL_PROJECT_ID_CANVAS npx vercel ./build/web --confirm --no-clipboard --token=$VERCEL_TOKEN --prod",
     "deploy:web:preview": "node ./scripts/pullRequestPreview.js",
     "deploy:web:base": "yarn build:web && npx vercel ./build/web --confirm --no-clipboard --token=$VERCEL_TOKEN",
     "generate:icons": "flutter pub run flutter_launcher_icons:main",

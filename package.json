@@ -17,6 +17,7 @@
     "lint:app": "yarn app lint",
     "test:unit:app": "yarn app test:unit",
     "deploy:web:app": "yarn app deploy:web",
+    "deploy:web:app:canvas": "yarn app deploy:web:canvas",
     "deploy:web:preview:app": "yarn app deploy:web:preview",
     "server": "yarn workspace @devsoutinho/server_webproxy",
     "start:server": "yarn server start",
