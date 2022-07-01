@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		793A06CD286F2BDD00A68D55 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793A06CC286F2BDD00A68D55 /* CreditsView.swift */; };
+		793A06D0286F2EE500A68D55 /* DetailsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793A06CF286F2EE500A68D55 /* DetailsScreenView.swift */; };
+		793A06D3286F3AF500A68D55 /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793A06D2286F3AF500A68D55 /* Sign.swift */; };
+		793A06D5286F3C0700A68D55 /* ListWithMemoryScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793A06D4286F3C0700A68D55 /* ListWithMemoryScreenView.swift */; };
 		79DFE621286C8A9600BAD29A /* DevSoutinho Labs WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 79DFE620286C8A9600BAD29A /* DevSoutinho Labs WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		79DFE626286C8A9800BAD29A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79DFE625286C8A9800BAD29A /* Assets.xcassets */; };
 		79DFE62C286C8A9900BAD29A /* DevSoutinho Labs WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 79DFE62B286C8A9900BAD29A /* DevSoutinho Labs WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -79,6 +83,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		793A06CC286F2BDD00A68D55 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
+		793A06CF286F2EE500A68D55 /* DetailsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreenView.swift; sourceTree = "<group>"; };
+		793A06D2286F3AF500A68D55 /* Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
+		793A06D4286F3C0700A68D55 /* ListWithMemoryScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWithMemoryScreenView.swift; sourceTree = "<group>"; };
 		79DFE61C286C8A9600BAD29A /* DevSoutinho Labs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DevSoutinho Labs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79DFE620286C8A9600BAD29A /* DevSoutinho Labs WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DevSoutinho Labs WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79DFE625286C8A9800BAD29A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,6 +132,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		793A06CE286F2BF100A68D55 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				793A06CC286F2BDD00A68D55 /* CreditsView.swift */,
+				793A06CF286F2EE500A68D55 /* DetailsScreenView.swift */,
+				793A06D4286F3C0700A68D55 /* ListWithMemoryScreenView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		793A06D1286F3A8C00A68D55 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				793A06D2286F3AF500A68D55 /* Sign.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		79DFE615286C8A9600BAD29A = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +184,8 @@
 		79DFE62F286C8A9900BAD29A /* DevSoutinho Labs WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				793A06D1286F3A8C00A68D55 /* Components */,
+				793A06CE286F2BF100A68D55 /* Views */,
 				79DFE630286C8A9900BAD29A /* DevSoutinho_LabsApp.swift */,
 				79DFE632286C8A9900BAD29A /* ContentView.swift */,
 				79DFE634286C8A9900BAD29A /* NotificationController.swift */,
@@ -386,8 +414,12 @@
 				79DFE635286C8A9900BAD29A /* NotificationController.swift in Sources */,
 				79DFE633286C8A9900BAD29A /* ContentView.swift in Sources */,
 				79DFE639286C8A9900BAD29A /* ComplicationController.swift in Sources */,
+				793A06CD286F2BDD00A68D55 /* CreditsView.swift in Sources */,
+				793A06D5286F3C0700A68D55 /* ListWithMemoryScreenView.swift in Sources */,
 				79DFE631286C8A9900BAD29A /* DevSoutinho_LabsApp.swift in Sources */,
 				79DFE637286C8A9900BAD29A /* NotificationView.swift in Sources */,
+				793A06D3286F3AF500A68D55 /* Sign.swift in Sources */,
+				793A06D0286F2EE500A68D55 /* DetailsScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
