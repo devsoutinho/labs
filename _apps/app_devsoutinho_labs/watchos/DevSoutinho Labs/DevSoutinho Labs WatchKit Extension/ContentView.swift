@@ -10,7 +10,13 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Text("Hello, World!")
+            Text("Hello!")
+                .font(.title)
+                .multilineTextAlignment(.center)
+                .padding(.bottom, 10.0)
+            Text("DevSoutinho Labs Watch")
+                .font(.body)
+                .multilineTextAlignment(.leading)
             Link("Apple.com", destination: URL(string: "https://www.apple.com")!)
         }
     }
