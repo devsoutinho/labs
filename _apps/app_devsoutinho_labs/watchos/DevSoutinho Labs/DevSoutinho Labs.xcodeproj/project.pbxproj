@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		791A7CC5286F6D0700D5726F /* YouTubeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791A7CC4286F6D0700D5726F /* YouTubeScreen.swift */; };
+		791A7CC7286F899500D5726F /* Pix4Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791A7CC6286F899500D5726F /* Pix4Screen.swift */; };
 		793A06CD286F2BDD00A68D55 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793A06CC286F2BDD00A68D55 /* CreditsView.swift */; };
 		793A06D0286F2EE500A68D55 /* DetailsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793A06CF286F2EE500A68D55 /* DetailsScreenView.swift */; };
 		793A06D3286F3AF500A68D55 /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793A06D2286F3AF500A68D55 /* Sign.swift */; };
@@ -83,6 +85,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		791A7CC4286F6D0700D5726F /* YouTubeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeScreen.swift; sourceTree = "<group>"; };
+		791A7CC6286F899500D5726F /* Pix4Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pix4Screen.swift; sourceTree = "<group>"; };
 		793A06CC286F2BDD00A68D55 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
 		793A06CF286F2EE500A68D55 /* DetailsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreenView.swift; sourceTree = "<group>"; };
 		793A06D2286F3AF500A68D55 /* Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 				793A06CC286F2BDD00A68D55 /* CreditsView.swift */,
 				793A06CF286F2EE500A68D55 /* DetailsScreenView.swift */,
 				793A06D4286F3C0700A68D55 /* ListWithMemoryScreenView.swift */,
+				791A7CC4286F6D0700D5726F /* YouTubeScreen.swift */,
+				791A7CC6286F899500D5726F /* Pix4Screen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -418,7 +424,9 @@
 				793A06D5286F3C0700A68D55 /* ListWithMemoryScreenView.swift in Sources */,
 				79DFE631286C8A9900BAD29A /* DevSoutinho_LabsApp.swift in Sources */,
 				79DFE637286C8A9900BAD29A /* NotificationView.swift in Sources */,
+				791A7CC5286F6D0700D5726F /* YouTubeScreen.swift in Sources */,
 				793A06D3286F3AF500A68D55 /* Sign.swift in Sources */,
+				791A7CC7286F899500D5726F /* Pix4Screen.swift in Sources */,
 				793A06D0286F2EE500A68D55 /* DetailsScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -60,19 +60,25 @@ struct ListWithMemoryScreenView: View {
                     notes.append(note)
                     save()
                 }
-            List {
-                ForEach(0..<notes.count, id: \.self) { i in
-                    HStack{
-                        Capsule()
-                            .frame(width: 4)
-                            .foregroundColor(.accentColor)
-                        Text(notes[i].text)
-                            .lineLimit(1)
-                            .padding(.leading, 5)
-                        
+            if notes.count >= 1 {
+                List {
+                    ForEach(0..<notes.count, id: \.self) { i in
+                        HStack{
+                            Capsule()
+                                .frame(width: 4)
+                                .foregroundColor(.accentColor)
+                            Text(notes[i].text)
+                                .lineLimit(1)
+                                .padding(.leading, 5)
+                            
+                        }
                     }
+                    .onDelete(perform: delete)
                 }
-                .onDelete(perform: delete)
+            } else {
+                Spacer()
+                Text("None note found :(")
+                Spacer()
             }
         }
         .onAppear(perform: {
