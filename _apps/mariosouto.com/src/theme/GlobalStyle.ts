@@ -24,7 +24,14 @@ const GlobalStyle = createGlobalStyle`
 
   }
   // ============
+  // Dark Mode Styles
+  body.dark {
+    color: #FFFFFF; 
+    background-color: #111111;
+  }
+  // ============
 
+  // Reset Styles
   * {
     box-sizing: border-box;
     margin: 0;
@@ -33,6 +40,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: sans-serif;
   }
+
 `;
 
 
