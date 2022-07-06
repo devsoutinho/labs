@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { ResponsiveProperty, StyleSheet } from '@src/theme/StyleSheet';
+import { renderCSS } from './renderCSS/renderCSS';
 
 
 interface BoxBaseProps {
@@ -9,7 +10,5 @@ interface BoxBaseProps {
 }
 export const BoxBase = styled.div<BoxBaseProps>`
   display: flex;
-  ${({ styleSheet }) => {
-    return styleSheet;
-  }};
+  ${({ styleSheet, theme }) => renderCSS(styleSheet, theme)};
 `;

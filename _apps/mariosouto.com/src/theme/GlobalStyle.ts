@@ -13,6 +13,8 @@ const GlobalStyle = createGlobalStyle`
     flex-direction: column;
   }
   #__next {
+    width: 100%;
+    overflow: hidden;
     display: flex;
     flex: 1;
     flex-direction: column;
