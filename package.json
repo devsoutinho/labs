@@ -24,6 +24,8 @@
     "test:server": "yarn server test",
     "lint:server": "yarn server lint",
     "lint:fix:server": "yarn server lint:fix",
-    "dev:server": "yarn server dev"
+    "dev:server": "yarn server dev",
+    "site": "yarn workspace @devsoutinho/mariosouto.com",
+    "dev:site": "yarn site dev"
   }
 }
