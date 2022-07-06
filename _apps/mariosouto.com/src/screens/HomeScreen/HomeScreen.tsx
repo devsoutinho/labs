@@ -1,6 +1,9 @@
 import Box from '@src/components/Box/Box';
 import Text from '@src/components/Text/Text';
 import useTheme from '@src/theme/useTheme';
+// Move to files
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 export default function HomeScreen() {
   const theme = useTheme();
@@ -9,17 +12,28 @@ export default function HomeScreen() {
       <Box
         tabIndex={0}
         styleSheet={{
-          color: 'red',
+          marginTop: '50px',
         }}
       >
+        {/* Material UI */}
+        <Box
+          styleSheet={{
+            padding: '50px',
+            backgroundColor: '#FFFFFF'
+          }}
+        >
+          <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+          <Button variant="contained">Sample Button</Button>
+        </Box>
+
         <Text
           tag="p"
           styleSheet={{
             background: theme.colors.primary.x100,
-            paddingVertical: '20px',
-            paddingHorizontal: '20px',
+            paddingVertical: theme.space.x5,
+            paddingHorizontal: theme.space.x5,
             hover: {
-              background: theme.colors.primary.x200,
+              background: theme.colors.primary.x050,
             },
             focus: {
               background: theme.colors.primary.x300,
