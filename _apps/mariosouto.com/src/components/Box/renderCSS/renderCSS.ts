@@ -1,10 +1,27 @@
 import { StyleSheet } from '@src/theme/StyleSheet';
 import themeBase, { Theme } from '@src/theme/theme';
 
-// Render Prop:
-// - By Breakpoints
-// - Horizontal
-// - Vertical
+function parseStyleSheetRule(property, value) {
+  if(property.includes('Vertical')) {
+    const propertyBase = property.replace('Vertical', '');
+    return {
+      [`${propertyBase}-top`]: value,
+      [`${propertyBase}-bottom`]: value,
+    }    
+  }
+  if(property.includes('Horizontal')) {
+    const propertyBase = property.replace('Horizontal', '');
+    return {
+      [`${propertyBase}-left`]: value,
+      [`${propertyBase}-right`]: value,
+    }    
+  }
+
+  return {
+    [property]: value,
+  }
+}
+
 function parseStyleSheetValue({styleSheetKey, mediaResultBy}) {
   const styleSheetProperty = styleSheetKey;
   return (acc, [mediaBase, valueBase]) => {
@@ -13,9 +30,7 @@ function parseStyleSheetValue({styleSheetKey, mediaResultBy}) {
     const value = valueBase;
     return {
       ...acc,
-      [media]: {
-        [styleSheetProperty]: value
-      }
+      [media]: parseStyleSheetRule(styleSheetProperty, value),
     }
   }
 }
@@ -35,7 +50,7 @@ function parseStyleSheet({ mediaResultBy, stateResultBy }) {
     if(typeof styleSheetValue === 'string' || typeof styleSheetValue === 'number') {
       const key = styleSheetKey;
       const value = styleSheetValue
-      return { ...acc, [key]: value };
+      return { ...acc, ...parseStyleSheetRule(key, value) };
     }
   
     if(typeof styleSheetValue === 'object') {
@@ -61,35 +76,12 @@ export function renderCSS(styleSheet: StyleSheet, theme: Theme = themeBase) {
   };
 
   const stateResultBy = {
-    hover: `body &:hover`,
-    focus: `body &:focus`,
-    dark: `body.dark &`,
+    hover: '&:hover, .dark &:hover',
+    focus: '&:focus, .dark &:focus',
+    disabled: '&:disabled, .dark &:disabled',
+    modeDark: '.dark &',
   };
 
   const output = Object.entries(styleSheet).reduce(parseStyleSheet({ mediaResultBy, stateResultBy }), {});
-  console.log(output);
   return output;
-  // {
-    // ...styleSheet,
-    // Dark Mode
-    // 'body.dark &': {
-    //   background: 'black',
-    //   color: 'white'
-    // },
-
-    // Hover
-    // 'body &:hover': {
-    //   background: 'red',
-    // },
-    
-    // Focus
-    // 'body &:focus': {
-    //   background: 'red',
-    // },
-    
-    // Disabled
-    // 'body &:disabled': {
-    //   background: 'grey',
-    // }
-  // };
 }

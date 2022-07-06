@@ -9,4 +9,12 @@ describe('renderCSS()', () => {
       expect(renderCSS({ color: { xs: 'red', md: 'blue' } })).toMatchSnapshot();
     })
   });
+  describe('when receives a stylesheet with hover styles', () => {
+    it('returns it as expected', () => {
+      expect(renderCSS({ color: 'red', hover: { color: 'blue' } })).toMatchSnapshot();
+    });
+    it('if they are responsive, return as expected', () => {
+      expect(renderCSS({ color: 'red', hover: { color: { xs: 'blue' } } })).toMatchSnapshot();
+    })
+  });
 });

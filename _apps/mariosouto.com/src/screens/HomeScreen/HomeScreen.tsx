@@ -8,21 +8,25 @@ export default function HomeScreen() {
     <>
       <Box
         tabIndex={0}
+        styleSheet={{
+          color: 'red',
+        }}
       >
         <Text
           tag="p"
           styleSheet={{
-            padding: '20px',
             background: theme.colors.primary.x100,
+            paddingVertical: '20px',
+            paddingHorizontal: '20px',
             hover: {
               background: theme.colors.primary.x200,
             },
             focus: {
               background: theme.colors.primary.x300,
             },
-            dark: {
+            modeDark: {
               background: theme.colors.primary.x700,
-            }
+            },
           }}
         >
           Página Inicial

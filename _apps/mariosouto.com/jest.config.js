@@ -1,3 +1,4 @@
+// DEMO: https://github.com/omariosouto/demo-frontend-testes
 const nextJest = require('next/jest');
 const { pathsToModuleNameMapper } = require('ts-jest');
 const { compilerOptions } = require('./tsconfig');

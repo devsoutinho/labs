@@ -2,8 +2,10 @@ import { StyleSheet } from '@src/theme/StyleSheet';
 import React from 'react';
 import styled from 'styled-components';
 import { BoxBase } from '../Box/BoxBase';
+import { renderCSS } from '../Box/renderCSS/renderCSS';
 
-const StyledText = styled(BoxBase)`
+const StyledText = styled.span<TextProps>`
+  ${({ styleSheet, theme }) => renderCSS(styleSheet, theme)};
 `;
 
 interface TextProps {

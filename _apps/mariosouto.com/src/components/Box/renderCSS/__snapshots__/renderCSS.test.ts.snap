@@ -10,3 +10,23 @@ Object {
   },
 }
 `;
+
+exports[`renderCSS() when receives a stylesheet with hover styles if they are responsive, return as expected 1`] = `
+Object {
+  "body &:hover": Object {
+    "@media (min-width: 0px)": Object {
+      "color": "blue",
+    },
+  },
+  "color": "red",
+}
+`;
+
+exports[`renderCSS() when receives a stylesheet with hover styles returns it as expected 1`] = `
+Object {
+  "body &:hover": Object {
+    "color": "blue",
+  },
+  "color": "red",
+}
+`;
