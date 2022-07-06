@@ -8,6 +8,7 @@ interface BoxBaseProps {
   [key: string]: ResponsiveProperty<string | any> | string | any;
 }
 export const BoxBase = styled.div<BoxBaseProps>`
+  display: flex;
   ${({ styleSheet }) => {
     return styleSheet;
   }};

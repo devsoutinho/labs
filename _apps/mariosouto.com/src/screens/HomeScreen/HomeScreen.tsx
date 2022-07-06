@@ -7,6 +7,7 @@ export default function HomeScreen() {
   return (
     <Box
       styleSheet={{
+        padding: '20px',
         background: theme.colors.primary.x100,
       }}
     >
