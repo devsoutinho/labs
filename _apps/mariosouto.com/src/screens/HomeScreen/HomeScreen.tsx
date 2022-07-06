@@ -7,46 +7,22 @@ export default function HomeScreen() {
   return (
     <>
       <Box
+        tabIndex={0}
         styleSheet={{
           padding: '20px',
           background: theme.colors.primary.x100,
+          hover: {
+            background: theme.colors.primary.x200,
+          },
+          focus: {
+            background: theme.colors.primary.x300,
+          },
+          dark: {
+            background: theme.colors.primary.x700,
+          }
         }}
       >
-        <Text
-          styleSheet={{
-            color: theme.colors.primary.x800,
-          }}
-        >
-          Página Inicial
-        </Text>
-      </Box>
-      <Box
-        styleSheet={{
-          padding: '20px',
-          background: theme.colors.primary.x100,
-        }}
-      >
-        <Text
-          styleSheet={{
-            color: theme.colors.primary.x800,
-          }}
-        >
-          Página Inicial
-        </Text>
-      </Box>
-      <Box
-        styleSheet={{
-          padding: '20px',
-          background: theme.colors.primary.x100,
-        }}
-      >
-        <Text
-          styleSheet={{
-            color: theme.colors.primary.x800,
-          }}
-        >
-          Página Inicial
-        </Text>
+        Página Inicial
       </Box>
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis ab amet officiis nihil eveniet illum maiores dolorum eos, voluptate tenetur sunt facilis. Obcaecati porro qui voluptatum odio, corrupti repellat ipsum.
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis ab amet officiis nihil eveniet illum maiores dolorum eos, voluptate tenetur sunt facilis. Obcaecati porro qui voluptatum odio, corrupti repellat ipsum.

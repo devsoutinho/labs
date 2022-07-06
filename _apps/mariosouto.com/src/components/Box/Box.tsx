@@ -6,6 +6,7 @@ import { BoxBase } from './BoxBase';
 interface BoxProps {
   styleSheet: StyleSheet;
   children: React.ReactNode;
+  tabIndex?: number;
 }
 export default function Box({ children, ...props }: BoxProps) {
   return (

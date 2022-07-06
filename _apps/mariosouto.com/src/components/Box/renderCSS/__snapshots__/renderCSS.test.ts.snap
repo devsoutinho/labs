@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderCSS() when receives a stylesheet with basic styles if they are responsive, return as expected 1`] = `
+Object {
+  "@media (min-width: 0px)": Object {
+    "color": "red",
+  },
+  "@media (min-width: 768px)": Object {
+    "color": "blue",
+  },
+}
+`;
