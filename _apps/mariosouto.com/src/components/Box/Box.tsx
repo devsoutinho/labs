@@ -4,7 +4,7 @@ import { BoxBase } from './BoxBase';
 
 
 interface BoxProps {
-  styleSheet: StyleSheet;
+  styleSheet?: StyleSheet;
   children: React.ReactNode;
   tabIndex?: number;
 }
@@ -14,4 +14,9 @@ export default function Box({ children, ...props }: BoxProps) {
       {children}
     </BoxBase>
   );
+}
+
+
+Box.defaultProps = {
+  styleSheet: {},
 }
