@@ -8,10 +8,10 @@ function textFieldTheme(theme: Theme, colorPallete: ColorPallete) {
   return css`
     /* Border */
     .MuiOutlinedInput-notchedOutline { /* border:default */
-      border-color: ${theme.colors.accent.x500};
+      /* border-color: ${theme.colors.accent.x500}; */
     }
     .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {  /* border:hover */
-      border-color: ${theme.colors.primary.x900};
+      border-color: ${theme.colors.primary.x500};
     }
     .Mui-focused .MuiOutlinedInput-notchedOutline {
       border-color: ${theme.colors.accent.x500}; /* border:focus */
