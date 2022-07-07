@@ -2,25 +2,25 @@ import React from 'react';
 import MaterialTextField from '@mui/material/TextField';
 import styled, { css } from 'styled-components';
 import { Theme } from '@src/theme/theme';
-import { ColorPallete, materialVariantMapBy } from "./settings";
+import { ColorPallete, colorPalleteBy, materialVariantMapBy } from "./settings";
 
 function textFieldTheme(theme: Theme, colorPallete: ColorPallete) {
+  const pallete = colorPalleteBy(theme)[colorPallete];
   return css`
     /* Border */
     .MuiOutlinedInput-notchedOutline { /* border:default */
-      /* border-color: ${theme.colors.accent.x500}; */
     }
     .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {  /* border:hover */
-      border-color: ${theme.colors.primary.x500};
+      border-color: ${pallete.borderColor};
     }
     .Mui-focused .MuiOutlinedInput-notchedOutline {
-      border-color: ${theme.colors.accent.x500}; /* border:focus */
+      border-color: ${pallete.borderColor}; /* border:focus */
     }
     /* ====== */
 
     /* Label */
     .MuiInputLabel-root.Mui-focused {
-      color: ${theme.colors.accent.x500}; 
+      color: ${pallete.labelColor}; 
     }
     /* ====== */
   `;

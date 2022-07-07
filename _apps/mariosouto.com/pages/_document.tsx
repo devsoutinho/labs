@@ -14,6 +14,10 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          />
           {/* Inject MUI styles first to match with the prepend: true configuration. */}
           {(this.props as any).emotionStyleTags}
         </Head>
@@ -51,7 +55,7 @@ MyDocument.getInitialProps = async (ctx: DocumentContext) => {
   // 2. page.getInitialProps
   // 3. app.render
   // 4. page.render
-  
+
   // [Styled-Components]
   const sheet = new ServerStyleSheet();
   const originalRenderPage = ctx.renderPage;
@@ -60,7 +64,7 @@ MyDocument.getInitialProps = async (ctx: DocumentContext) => {
     // However, be aware that it can have global side effects.
     const cache = createEmotionCache();
     const { extractCriticalToChunks } = createEmotionServer(cache);
-  
+
     ctx.renderPage = () =>
       originalRenderPage({
         enhanceApp: (App: any) =>
@@ -71,7 +75,7 @@ MyDocument.getInitialProps = async (ctx: DocumentContext) => {
             );
           },
       });
-  
+
     const initialProps = await Document.getInitialProps(ctx);
     // This is important. It prevents Emotion to render invalid HTML.
     // See https://github.com/mui/material-ui/issues/26561#issuecomment-855286153
@@ -84,8 +88,8 @@ MyDocument.getInitialProps = async (ctx: DocumentContext) => {
         dangerouslySetInnerHTML={{ __html: style.css }}
       />
     ));
-  
-    
+
+
     return {
       ...initialProps,
       styles: [initialProps.styles, sheet.getStyleElement()],

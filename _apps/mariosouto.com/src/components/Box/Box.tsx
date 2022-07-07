@@ -4,8 +4,9 @@ import { BoxBase } from './BoxBase';
 
 
 interface BoxProps {
+  tag?: 'main' | 'div' | 'article' | 'nav' | 'section';
   styleSheet?: StyleSheet;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   tabIndex?: number;
 }
 export default function Box({ children, ...props }: BoxProps) {
