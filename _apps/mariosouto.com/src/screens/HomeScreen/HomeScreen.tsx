@@ -16,6 +16,9 @@ export default function HomeScreen() {
         flex: 1,
         modeDark: {
           backgroundColor: theme.colors.neutral.x900,
+        },
+        hover: {
+          backgroundColor: theme.colors.neutral.x500,
         }
       }}
     >
