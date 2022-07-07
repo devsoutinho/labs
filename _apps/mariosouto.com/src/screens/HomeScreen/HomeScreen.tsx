@@ -2,8 +2,8 @@ import Box from '@src/components/Box/Box';
 import Text from '@src/components/Text/Text';
 import useTheme from '@src/theme/useTheme';
 // Move to files
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
+import Button from '@src/components/Button/Button';
+import TextField from '@src/components/TextField/TextField';
 
 export default function HomeScreen() {
   const theme = useTheme();
@@ -12,18 +12,17 @@ export default function HomeScreen() {
       <Box
         tabIndex={0}
         styleSheet={{
-          marginTop: '50px',
+          marginTop: theme.space.x20,
         }}
       >
-        {/* Material UI */}
         <Box
           styleSheet={{
-            padding: '50px',
-            backgroundColor: '#FFFFFF'
+            padding: theme.space.x20,
+            backgroundColor: theme.colors.neutral.x000,
           }}
         >
           <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-          <Button variant="contained">Sample Button</Button>
+          <Button colorPallete="accent" variant="contained" >Sample Button</Button>
         </Box>
 
         <Text
@@ -46,13 +45,6 @@ export default function HomeScreen() {
           Página Inicial
         </Text>
       </Box>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis ab amet officiis nihil eveniet illum maiores dolorum eos, voluptate tenetur sunt facilis. Obcaecati porro qui voluptatum odio, corrupti repellat ipsum.
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis ab amet officiis nihil eveniet illum maiores dolorum eos, voluptate tenetur sunt facilis. Obcaecati porro qui voluptatum odio, corrupti repellat ipsum.
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis ab amet officiis nihil eveniet illum maiores dolorum eos, voluptate tenetur sunt facilis. Obcaecati porro qui voluptatum odio, corrupti repellat ipsum.
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis ab amet officiis nihil eveniet illum maiores dolorum eos, voluptate tenetur sunt facilis. Obcaecati porro qui voluptatum odio, corrupti repellat ipsum.
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis ab amet officiis nihil eveniet illum maiores dolorum eos, voluptate tenetur sunt facilis. Obcaecati porro qui voluptatum odio, corrupti repellat ipsum.
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis ab amet officiis nihil eveniet illum maiores dolorum eos, voluptate tenetur sunt facilis. Obcaecati porro qui voluptatum odio, corrupti repellat ipsum.
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis ab amet officiis nihil eveniet illum maiores dolorum eos, voluptate tenetur sunt facilis. Obcaecati porro qui voluptatum odio, corrupti repellat ipsum.
     </>
   );
 }

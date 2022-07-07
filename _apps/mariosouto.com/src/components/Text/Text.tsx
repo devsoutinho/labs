@@ -1,7 +1,6 @@
 import { StyleSheet } from '@src/theme/StyleSheet';
 import React from 'react';
 import styled from 'styled-components';
-import { BoxBase } from '../Box/BoxBase';
 import { renderCSS } from '../Box/renderCSS/renderCSS';
 
 const StyledText = styled.span<TextProps>`
