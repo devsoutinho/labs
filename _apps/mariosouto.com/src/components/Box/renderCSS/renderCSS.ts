@@ -65,7 +65,7 @@ function parseStyleSheet({ mediaResultBy, stateResultBy }) {
   }
 }
 
-export function renderCSS(styleSheet: StyleSheet, theme: Theme = themeBase) {
+export function renderCSS(styleSheet: StyleSheet, theme: Theme = themeBase, uniqueId: string = 'demo-id') {
   const breakpoints = theme.breakpoints;
   const mediaResultBy = {
     xs: `@media (min-width: ${breakpoints.xs}px)`,
@@ -76,10 +76,10 @@ export function renderCSS(styleSheet: StyleSheet, theme: Theme = themeBase) {
   };
 
   const stateResultBy = {
-    hover: '&:hover, .dark &:hover',
-    focus: '&:focus, .dark &:focus',
-    disabled: '&:disabled, .dark &:disabled',
-    modeDark: '.dark &',
+    hover: `&:hover, body.dark &.${uniqueId}:hover`,
+    focus: `&:focus, body.dark &.${uniqueId}:focus`,
+    disabled: `&:disabled, body.dark &.${uniqueId}:disabled`,
+    modeDark: `body.dark &.${uniqueId}`,
   };
 
   const output = Object.entries(styleSheet).reduce(parseStyleSheet({ mediaResultBy, stateResultBy }), {});

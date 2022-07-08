@@ -2,10 +2,20 @@ import useTheme from '@src/theme/useTheme';
 import Box from '@src/components/Box/Box';
 import Text from '@src/components/Text/Text';
 import Icon from "@src/components/Icon/Icon";
+import { useEffect, useState } from "react";
 
 
 export default function HomeScreen() {
   const theme = useTheme();
+  const [colorScheme, setColorScheme] = useState('');
+
+  useEffect(() => {
+    setColorScheme(globalThis.localStorage?.getItem('theme'));
+  }, [setColorScheme])
+  useEffect(() => {
+    if(colorScheme) globalThis.__setPreferredTheme(colorScheme);
+  }, [colorScheme]);
+
   return (
     <Box
       tag="main"
@@ -17,12 +27,15 @@ export default function HomeScreen() {
         modeDark: {
           backgroundColor: theme.colors.neutral.x900,
         },
-        hover: {
-          backgroundColor: theme.colors.neutral.x500,
-        }
       }}
     >
       <Background />
+      <label>
+      {colorScheme}
+      <input type="checkbox" onChange={() => {
+        setColorScheme(colorScheme === 'dark' ? 'light' : 'dark');
+      }} />
+      </label>
 
       <Menu />
     </Box>

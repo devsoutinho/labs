@@ -9,9 +9,10 @@ interface BoxProps {
   children?: React.ReactNode;
   tabIndex?: number;
 }
-export default function Box({ children, ...props }: BoxProps) {
+export default function Box({ children, tag, ...props }: BoxProps) {
+  const id = React.useId().replaceAll(':', '');
   return (
-    <BoxBase {...props}>
+    <BoxBase as={tag} uniqueId={id} className={id} {...props}>
       {children}
     </BoxBase>
   );
