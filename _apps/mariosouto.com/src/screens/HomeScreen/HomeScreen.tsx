@@ -7,7 +7,7 @@ import { useColorScheme } from "@src/infra/ColorScheme/ColorSchemeProvider";
 
 export default function HomeScreen() {
   const theme = useTheme();
-  const { colorScheme, setColorScheme } = useColorScheme();
+  const { isLightColorScheme, isDarkColorScheme, colorScheme, setColorScheme } = useColorScheme();
 
   return (
     <Box
@@ -28,7 +28,7 @@ export default function HomeScreen() {
         <input
           type="radio"
           name="colorscheme"
-          checked={colorScheme === 'dark'}
+          checked={isDarkColorScheme}
           value="dark"
           onChange={(e) => setColorScheme(e.target.value as unknown as any)} 
         />
@@ -38,7 +38,7 @@ export default function HomeScreen() {
         <input
           type="radio"
           name="colorscheme"
-          checked={colorScheme === 'light'}
+          checked={isLightColorScheme}
           value="light"
           onChange={(e) => setColorScheme(e.target.value as unknown as any)}
         />

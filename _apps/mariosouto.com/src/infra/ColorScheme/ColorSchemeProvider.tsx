@@ -26,6 +26,8 @@ export function useColorScheme() {
 
   return {
     colorScheme,
+    isDarkColorScheme: colorScheme === 'dark',
+    isLightColorScheme: colorScheme === 'light',
     setColorScheme,
   };
 }
