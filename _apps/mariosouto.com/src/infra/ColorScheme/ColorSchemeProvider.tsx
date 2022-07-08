@@ -5,9 +5,7 @@ export function useColorScheme() {
   const [colorScheme, setColorScheme] = React.useState<ColorSchemes>('');
 
   function storeColorScheme() {
-    console.log('Must store new value in localStorage');
-    const colorScheme = localStorage.getItem('theme') as ColorSchemes;
-    console.log(`New ColorScheme ${colorScheme}`)
+    const colorScheme = localStorage.getItem('COLOR_SCHEME_KEY') as ColorSchemes;
     setColorScheme(colorScheme);
   }
 
@@ -18,7 +16,7 @@ export function useColorScheme() {
   }, []);
 
   React.useEffect(() => {
-    const activeColorScheme = globalThis.localStorage?.getItem('theme') as ColorSchemes;
+    const activeColorScheme = globalThis.localStorage?.getItem('COLOR_SCHEME_KEY') as ColorSchemes;
     setColorScheme(activeColorScheme);
   }, [setColorScheme]);
 
@@ -48,13 +46,13 @@ export function ColorSchemeScript() {
 
           var preferredTheme;
           try {
-            preferredTheme = localStorage.getItem('theme');
+            preferredTheme = localStorage.getItem('COLOR_SCHEME_KEY');
           } catch (err) { }
 
           window.__setPreferredTheme = function(newTheme) {
             setTheme(newTheme);
             try {
-              localStorage.setItem('theme', newTheme);
+              localStorage.setItem('COLOR_SCHEME_KEY', newTheme);
             } catch (err) {}
           }
 
