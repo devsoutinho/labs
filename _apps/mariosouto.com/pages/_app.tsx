@@ -2,7 +2,6 @@ import { ThemeProvider as MaterialThemeProvider } from '@mui/material/styles';
 import ThemeProvider from '@src/theme/ThemeProvider';
 import GlobalStyle from '@src/theme/GlobalStyle';
 import { AppProps } from 'next/app';
-import DarkModeProvider from '@src/infra/DarkModeSwitcher/DarkModeProvider';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import Head from 'next/head';
 import { createTheme } from '@mui/material/styles';
@@ -36,7 +35,6 @@ export default function App(props: MyAppProps) {
 
   return (
     <>
-      <DarkModeProvider />
       <CacheProvider value={emotionCache}>
         <Head>
           <meta name="viewport" content="initial-scale=1, width=device-width" />

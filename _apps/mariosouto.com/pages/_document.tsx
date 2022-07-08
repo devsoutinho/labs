@@ -1,4 +1,4 @@
-import DarkModeProvider from '@src/infra/DarkModeSwitcher/DarkModeProvider'
+import { ColorSchemeScript } from '@src/infra/ColorScheme/ColorSchemeProvider'
 import Document, { DocumentContext, Html, Head, Main, NextScript } from 'next/document'
 import createEmotionServer from '@emotion/server/create-instance';
 import createEmotionCache from '../src/createEmotionCache';
@@ -22,7 +22,7 @@ export default class MyDocument extends Document {
           {(this.props as any).emotionStyleTags}
         </Head>
         <body className='body'>
-          <DarkModeProvider />
+          <ColorSchemeScript />
           <Main />
           <NextScript />
         </body>

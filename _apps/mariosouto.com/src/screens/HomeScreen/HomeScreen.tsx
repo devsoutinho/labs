@@ -2,19 +2,12 @@ import useTheme from '@src/theme/useTheme';
 import Box from '@src/components/Box/Box';
 import Text from '@src/components/Text/Text';
 import Icon from "@src/components/Icon/Icon";
-import { useEffect, useState } from "react";
+import { useColorScheme } from "@src/infra/ColorScheme/ColorSchemeProvider";
 
 
 export default function HomeScreen() {
   const theme = useTheme();
-  const [colorScheme, setColorScheme] = useState('');
-
-  useEffect(() => {
-    setColorScheme(globalThis.localStorage?.getItem('theme'));
-  }, [setColorScheme])
-  useEffect(() => {
-    if(colorScheme) globalThis.__setPreferredTheme(colorScheme);
-  }, [colorScheme]);
+  const { colorScheme, setColorScheme } = useColorScheme();
 
   return (
     <Box
@@ -30,15 +23,29 @@ export default function HomeScreen() {
       }}
     >
       <Background />
-      <label>
-      {colorScheme}
-      <input type="checkbox" onChange={() => {
-        setColorScheme(colorScheme === 'dark' ? 'light' : 'dark');
-      }} />
-      <button onClick={() => setColorScheme('')}>
-        Clear
-      </button>
-      </label>
+      <Text>
+        Scheme Dark
+        <input
+          type="radio"
+          name="colorscheme"
+          checked={colorScheme === 'dark'}
+          value="dark"
+          onChange={(e) => setColorScheme(e.target.value as unknown as any)} 
+        />
+      </Text>
+      <Text tag="label">
+        Scheme Light
+        <input
+          type="radio"
+          name="colorscheme"
+          checked={colorScheme === 'light'}
+          value="light"
+          onChange={(e) => setColorScheme(e.target.value as unknown as any)}
+        />
+      </Text>
+      <Text>
+        Active: {colorScheme}
+      </Text>
 
       <Menu />
     </Box>

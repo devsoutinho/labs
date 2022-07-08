@@ -65,7 +65,7 @@ function parseStyleSheet({ mediaResultBy, stateResultBy }) {
   }
 }
 
-export function renderCSS(styleSheet: StyleSheet, theme: Theme = themeBase, uniqueId: string = 'demo-id') {
+export function renderCSS(styleSheet: StyleSheet = {}, theme: Theme = themeBase, uniqueId: string = 'demo-id') {
   const breakpoints = theme.breakpoints;
   const mediaResultBy = {
     xs: `@media (min-width: ${breakpoints.xs}px)`,

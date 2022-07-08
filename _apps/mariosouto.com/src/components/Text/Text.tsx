@@ -8,7 +8,7 @@ const StyledText = styled.span<TextProps>`
 `;
 
 interface TextProps {
-  tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
+  tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'label';
   children: React.ReactNode;
   styleSheet?: StyleSheet;
   uniqueId?: string;
