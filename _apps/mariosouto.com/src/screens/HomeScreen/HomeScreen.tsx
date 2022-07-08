@@ -35,6 +35,9 @@ export default function HomeScreen() {
       <input type="checkbox" onChange={() => {
         setColorScheme(colorScheme === 'dark' ? 'light' : 'dark');
       }} />
+      <button onClick={() => setColorScheme('')}>
+        Clear
+      </button>
       </label>
 
       <Menu />
