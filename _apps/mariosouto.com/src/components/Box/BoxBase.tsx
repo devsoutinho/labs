@@ -11,5 +11,7 @@ interface BoxBaseProps {
 }
 export const BoxBase = styled.div<BoxBaseProps>`
   display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   ${({ styleSheet, theme, uniqueId }) => renderCSS(styleSheet, theme, uniqueId)};
 `;

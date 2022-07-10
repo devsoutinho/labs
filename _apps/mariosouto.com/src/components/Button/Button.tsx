@@ -7,6 +7,7 @@ import { Theme } from '@src/theme/theme';
 function buttonTheme(theme: Theme, colorPallete: ColorPallete) {
   const pallete = colorPalleteBy(theme)[colorPallete];
   return css`
+    text-transform: none;
     background-color: ${pallete.backgroundColor};
     color: ${pallete.color};
     &:hover {

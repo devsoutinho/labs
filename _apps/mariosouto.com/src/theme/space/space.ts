@@ -57,10 +57,14 @@ const percent = {
 
 const container = {
   xs: '0', // '440px'  /* 27.5rem */,
-  sm: '640px' /* 40rem */,
-  md: '768px' /* 48rem */,
-  lg: '1024px' /* 64rem */,
-  xl: '1280px' /* 80rem */,
+  /** sm = 640px or 40rem */
+  sm: '640px',
+  /** md = 768px or 48rem */
+  md: '768px',
+  /** lg = 1024px or 64rem */
+  lg: '1024px',
+  /** xl = 1280px or 80rem */
+  xl: '1280px',
 };
 
 export const space = {
