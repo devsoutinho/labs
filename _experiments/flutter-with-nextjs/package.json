@@ -1,0 +1,19 @@
+{
+  "name": "@devsoutinho/flutter-with-nextjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "next start",
+    "dev": "next dev",
+    "predev": "yarn build:flutter",
+    "prebuild": "yarn build:flutter",
+    "build": "next build",
+    "build:flutter": "cd flutter_shell && flutter build web --web-renderer html && cp -R ./build/web/* ../public"
+  },
+  "dependencies": {
+    "next": "^12.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

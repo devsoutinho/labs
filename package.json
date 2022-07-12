@@ -3,6 +3,7 @@
   "private": true,
   "workspaces": [
     "_servers/*",
+    "_experiments/*",
     "_apps/*"
   ],
   "scripts": {
