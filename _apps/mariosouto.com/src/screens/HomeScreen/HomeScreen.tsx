@@ -52,8 +52,8 @@ function Menu() {
   return (
     <Box
       styleSheet={{
-        paddingHorizontal: theme.space.x4,
-        paddingVertical: theme.space.x4,
+        paddingHorizontal: theme.space.x6,
+        paddingVertical: theme.space.x6,
         width: theme.space.percent["x1/1"],
         position: 'absolute',
         top: theme.space.x0,
@@ -100,11 +100,17 @@ function HomeBody() {
       borderTopLeftRadius: theme.borderRadius.lg,
       borderTopRightRadius: theme.borderRadius.lg,
       width: theme.space.percent["x1/1"],
-      maxWidth: theme.space.container.sm,
+      // maxWidth: theme.space.container.sm,
+      maxWidth: {
+        xs: theme.space.container.xs,
+        sm: theme.space.container.sm,
+      },
       backgroundColor: theme.colors.neutral.x000,
       alignSelf: 'center',
-      paddingVertical: theme.space.x10,
-      paddingHorizontal: theme.space.x9,
+      padding: {
+        xs: theme.space.x6,
+        sm: theme.space.x10,
+      },
       flexDirection: 'column',
       alignItems: 'stretch',
       color: theme.colors.neutral.x500,

@@ -25,6 +25,8 @@ function parseStyleSheetRule(property, value) {
 function parseStyleSheetValue({styleSheetKey, mediaResultBy}) {
   const styleSheetProperty = styleSheetKey;
   return (acc, [mediaBase, valueBase]) => {
+
+    console.log(styleSheetKey);
   
     const media = mediaResultBy[mediaBase];
     const value = valueBase;

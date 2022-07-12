@@ -56,7 +56,8 @@ const percent = {
 };
 
 const container = {
-  xs: '0', // '440px'  /* 27.5rem */,
+  /** sm = 440px or 27.5rem */
+  xs: '440px',
   /** sm = 640px or 40rem */
   sm: '640px',
   /** md = 768px or 48rem */
