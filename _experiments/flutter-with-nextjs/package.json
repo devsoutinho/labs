@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "preinstall": "cd ./flutter_shell && flutter pub get",
     "start": "next start",
     "dev": "next dev",
     "predev": "yarn build:flutter",

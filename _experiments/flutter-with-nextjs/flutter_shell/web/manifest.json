@@ -1,6 +1,6 @@
 {
-    "name": "flutter_shell",
-    "short_name": "flutter_shell",
+    "name": "shell_project",
+    "short_name": "shell_project",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

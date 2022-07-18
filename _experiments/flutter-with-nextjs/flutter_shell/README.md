@@ -1,4 +1,4 @@
-# flutter_shell
+# shell_project
 
 A new Flutter project.
 
